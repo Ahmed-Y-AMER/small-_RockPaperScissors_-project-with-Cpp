@@ -5,6 +5,7 @@
 #include <time.h>
 using namespace std;
 
+// asks the user to enter the number of rounds
 int numOfRounds(string message) {
 	cout << message;
 	int roundsNumber;
@@ -13,7 +14,7 @@ int numOfRounds(string message) {
 	return roundsNumber;
 }
 
-
+// asks the user to enter the choice (rock or paper or scissors)
 int playerChoice(string message) {
 	cout << message;
 	int choice;
@@ -22,13 +23,13 @@ int playerChoice(string message) {
 	return choice;
 }
 
-
+// generates a random number for the computer
 int randomNumber(int from, int to) {
 	srand(time(0));
 	return rand() % (to - from) + from;
 }
 
-
+// asks the user to enter the choice(rock or paper or scissors) again in case the choice was invalid input
 int enterAgain() {
 	
 	int playerChoice;
@@ -40,7 +41,7 @@ int enterAgain() {
 	return playerChoice;
 }
 
-
+// compare the choices between the user(player) and the computer
 void compareChoices(int computerChoice, int playerChoice , int &numOfPwins , int &numOfCwins , int &numOfDraws) {
 	if (computerChoice == 1) {
 		switch (playerChoice) {
@@ -136,7 +137,7 @@ void compareChoices(int computerChoice, int playerChoice , int &numOfPwins , int
 	}
 }
 
-
+// print the result and asks if the user want to play again or not
 char result(int numOfPwins, int numOfCwins , int numOfDraws , int roundsNumber) {
 	cout << "\t\t\t\t  _________________________________________________________\n\n";
 	cout << "\t\t\t\t\t\t* * * *G A M E   O V E R* * * * \n";
@@ -168,7 +169,7 @@ char result(int numOfPwins, int numOfCwins , int numOfDraws , int roundsNumber) 
 
 }
 
-
+// the menu of all of the above functions
 void startingTheGame() {
 	int roundsNumber = numOfRounds("How many rounds you want to play ? ");
 	int choice;
